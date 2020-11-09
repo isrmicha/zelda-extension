@@ -19889,8 +19889,6 @@ var Home = function Home() {
     };
   }();
 
-  var debouncedFetch = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(fetchData, 1000);
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
     container: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
@@ -19899,7 +19897,10 @@ var Home = function Home() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
     container: true,
     spacing: 1
-  }, routes.map(function (route) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
+    item: true,
+    xs: 12
+  }), routes.map(function (route) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
       item: true,
       xs: 3,
@@ -19944,6 +19945,11 @@ var Home = function Home() {
     var name = _ref4.name,
         description = _ref4.description;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+      style: {
+        backgroundColor: "rgba(0, 0, 0, .03)",
+        borderBottom: "unset",
+        boxShadow: "unset"
+      },
       key: name
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
       expandIcon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_11__.default, null)

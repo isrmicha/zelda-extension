@@ -18,7 +18,9 @@ import { Skeleton } from "@material-ui/lab";
 import { Search } from "@material-ui/icons";
 import _debounce from "lodash/debounce";
 
-const ZELDA_API_URL = __DEV__ ? "http://localhost:3000/" : 'https://isrmicha-zelda.herokuapp.com/'
+const ZELDA_API_URL = __DEV__
+  ? "http://localhost:3000/"
+  : "https://isrmicha-zelda.herokuapp.com/";
 
 const routes = [
   "games",
@@ -58,13 +60,17 @@ const Home = () => {
       setData(false);
     }
   };
-  const debouncedFetch = _debounce(fetchData, 1000);
 
   return (
     <Container>
       <Grid container>
         <Grid item xs={12}>
           <Grid container spacing={1}>
+            <Grid item xs={12}>
+              {/* <Typography align="center" variant="h4" component="h4">
+                Zelda Wiki
+              </Typography> */}
+            </Grid>
             {routes.map((route) => (
               <Grid item xs={3} key={route}>
                 <Button
@@ -82,7 +88,7 @@ const Home = () => {
         </Grid>
         {data === "loading" ? (
           <LoadingContainer>
-            <Skeleton active/>
+            <Skeleton active />
           </LoadingContainer>
         ) : data === null ? (
           <p>Choose the data</p>
@@ -110,7 +116,14 @@ const Home = () => {
             </Grid>
             <Grid item xs={12}>
               {filteredData.map(({ name, description }) => (
-                <Accordion key={name}>
+                <Accordion
+                  style={{
+                    backgroundColor: "rgba(0, 0, 0, .03)",
+                    borderBottom: "unset",
+                    boxShadow: "unset"
+                  }}
+                  key={name}
+                >
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>{name}</Typography>
                   </AccordionSummary>
