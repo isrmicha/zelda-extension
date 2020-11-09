@@ -14,6 +14,8 @@ const routes = [
   "items",
 ];
 
+fastify.get(`/`, async (request, reply) => reply.send({message: "OK"}))
+
 routes.forEach((route) =>
   fastify.get(`/${route}`, async (request, reply) => {
     const { data } = await axios(
